@@ -1,0 +1,16 @@
+{
+  "name": "talentpay",
+  "version": "1.0.0",
+  "description": "quick automated test",
+  "main": "index.js",
+  "repository": "git@github.com:alexmaddock/talentpay.git",
+  "author": "Alex Maddock <alex.maddock@fusionsport.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "testcafe chrome tests/**.spec.js"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "testcafe": "^1.9.1"
+  }
+}
