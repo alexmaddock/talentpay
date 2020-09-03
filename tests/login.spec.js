@@ -18,6 +18,7 @@ test('enter code', async() => {
     await LoginPage.clickSubmit();
     await LoginPage.clickIAmTalent();
     await LoginPage.clickJoinForFree();
+    // Below don't work due to selector not visible logic inside testcafe. Needs work to figure out solution
     await LoginPage.enterFirstName('Test');
     await LoginPage.enterLastName('User');
     await LoginPage.enterEmail(`testuser-${randomNum}@mailinator`);
@@ -26,7 +27,7 @@ test('enter code', async() => {
     await LoginPage.confirmPassword(PASSWORD);
 });
 
-test.only('visit mailinator and check email', async () => {
+test('visit mailinator and check email', async () => {
     await MailinatorPage.visitPage();
     await MailinatorPage.visitMailBox();
     await MailinatorPage.selectEmail();
