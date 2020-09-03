@@ -26,10 +26,12 @@ test('enter code', async() => {
     await LoginPage.confirmPassword(PASSWORD);
 });
 
-test('visit mailinator and check email', async () => {
+test.only('visit mailinator and check email', async () => {
     await MailinatorPage.visitPage();
     await MailinatorPage.visitMailBox();
     await MailinatorPage.selectEmail();
+    // This isn't working. Manually right clicking does not bring up inspect console...? 
+    await MailinatorPage.verifyEmail(); 
 
 });
 

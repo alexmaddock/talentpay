@@ -18,6 +18,11 @@ const MailinatorPage = {
     selectEmail: async() => {
         const tableName = Selector('tr').withAttribute('id', /row_talentpaytesting/).find('td').withText('Verify');
         await t.click(tableName);
+    },
+
+    verifyEmail: async() => {
+        const emailBody = Selector('div').withAttribute('href', /uat.talentpaycasting/);
+        await t.click(emailBody, {speed: 0.2});
     }
 }
 
