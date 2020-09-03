@@ -7,7 +7,8 @@
   "author": "Alex Maddock <alex.maddock@fusionsport.com>",
   "license": "MIT",
   "scripts": {
-    "test": "testcafe chrome tests/**.spec.js"
+    "test": "testcafe chrome tests/**.spec.js",
+    "test-slow": "testcafe chrome tests/**.spec.js --speed 0.7"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

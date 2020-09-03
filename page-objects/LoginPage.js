@@ -22,6 +22,11 @@ const LoginPage = {
     },
 
     enterFirstName: async (firstName) => {
+        
+        let firstNameInput = ClientFunction(() => {
+            return document.getElementById('talfirstname');
+        });
+        
         /** TestCafe is saying element is not visible. Need to find workaround for this
          * getComputedStyle(document.querySelector("[data-qa-id="director-checkbox"]")).visibility
          * shows that it is visible on chrome console. 
@@ -39,14 +44,15 @@ const LoginPage = {
         // const visibleElementWithId = elementWithId.with({
         //     visibilityCheck: true
         // });
-        
+
         // const visibleButton = await visibleElementWithId('talfirstname');
         // await t.typeText(visibleButton, firstName)
         // const form0 = Selector('.signup-talent1-form-sec').nth(0);
         // const firstNameInput = form0.find('input').nth(0);
         // const firstNameInput = Selector('input').withAttribute('id', 'talfirstname');
         // const firstNameInput = Selector('#talfirstname').with({visibilityCheck: false});
-        // await t.typeText(firstNameInput, firstName)
+        // const firstNameInput = Selector('#talfirstname')//.withText('First');
+        await t.typeText(await firstNameInput, firstName)
     },
 
     enterLastName: async (lastName) => {
